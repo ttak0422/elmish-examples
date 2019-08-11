@@ -1,0 +1,8 @@
+{
+  "name": "elmish-examples",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ttak0422/elmish-examples.git",
+  "author": "ttak0422 <bgdaewalkman@gmail.com>",
+  "license": "MIT"
+}
