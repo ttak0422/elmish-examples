@@ -1,7 +1,19 @@
-// [ FAKE GROUP ]
+source https://nuget.org/api/v2
+storage: none
+
+nuget Fable.Core
+
+group Elmish
+    storage:none
+    source https://api.nuget.org/v3/index.json
+    nuget Fable.Elmish
+    nuget Fable.Elmish.React
+    nuget Fable.Elmish.Browser
+
 group Build
-    storage none
+    storage: none
     source https://api.nuget.org/v3/index.json
     nuget Fake.DotNet.Cli
     nuget Fake.IO.FileSystem
     nuget Fake.Core.Target
+    nuget Fake.JavaScript.Yarn
