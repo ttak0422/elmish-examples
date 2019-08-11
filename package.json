@@ -4,5 +4,15 @@
   "main": "index.js",
   "repository": "https://github.com/ttak0422/elmish-examples.git",
   "author": "ttak0422 <bgdaewalkman@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.5.5",
+    "fable-compiler": "^2.3.18",
+    "fable-loader": "^2.1.8",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.8.0"
+  }
 }
