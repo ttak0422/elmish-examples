@@ -31,7 +31,7 @@ module View =
         (*
             Elmishではイベントの発火にdispatcherが必要なので
             ローカル関数にしてdispatcherにアクセスできるようにしたり、
-            引数として渡したりする必要がある
+            引数として渡したりする必要がある。
         *)
         let viewCount (index, count) : ReactElement =
             div [ ClassName "mb-2" ]

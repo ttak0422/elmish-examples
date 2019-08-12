@@ -23,29 +23,16 @@ Target.create "DotnetRestore" <| fun _ ->
 
 Target.create "PreProcessing" ignore
 
-Target.create "01" <| fun _ ->
-    Yarn.exec "start01" id
-
-Target.create "01b" <| fun _ ->
-    Yarn.exec "start01b" id
-
-Target.create "03" <| fun _ ->
-    Yarn.exec "start03" id
-
-Target.create "04" <| fun _ ->
-    Yarn.exec "start04" id
-
-Target.create "05" <| fun _ ->
-    Yarn.exec "start05" id
-
-Target.create "07" <| fun _ ->
-    Yarn.exec "start07" id
-
-Target.create "08" <| fun _ ->
-    Yarn.exec "start08" id
-
-Target.create "09" <| fun _ ->
-    Yarn.exec "start09" id
+Target.create "01" <| fun _ -> Yarn.exec "start01" id
+Target.create "01b" <| fun _ -> Yarn.exec "start01b" id
+Target.create "03" <| fun _ -> Yarn.exec "start03" id
+Target.create "04" <| fun _ -> Yarn.exec "start04" id
+Target.create "05" <| fun _ -> Yarn.exec "start05" id
+Target.create "07" <| fun _ -> Yarn.exec "start07" id
+Target.create "08" <| fun _ -> Yarn.exec "start08" id
+Target.create "09" <| fun _ -> Yarn.exec "start09" id
+Target.create "10" <| fun _ -> Yarn.exec "start10" id
+Target.create "11" <| fun _ -> Yarn.exec "start11" id
 
 "Clean"
     ==> "YarnInstall"
@@ -60,5 +47,7 @@ Target.create "09" <| fun _ ->
 "PreProcessing" ==> "07"
 "PreProcessing" ==> "08"
 "PreProcessing" ==> "09"
+"PreProcessing" ==> "10"
+"PreProcessing" ==> "11"
 
 Target.runOrDefault "PreProcessing"
