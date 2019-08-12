@@ -13,7 +13,9 @@
     "build03": "webpack --env.entry=./src/HelloWorld03/HelloWorld03.fsproj --mode=development",
     "start03": "webpack-dev-server --env.entry=./src/HelloWorld03/HelloWorld03.fsproj --mode=development",
     "build04": "webpack --env.entry=./src/HelloWorld04/HelloWorld04.fsproj --mode=development",
-    "start04": "webpack-dev-server --env.entry=./src/HelloWorld04/HelloWorld04.fsproj --mode=development"
+    "start04": "webpack-dev-server --env.entry=./src/HelloWorld04/HelloWorld04.fsproj --mode=development",
+    "build05": "webpack --env.entry=./src/Counter05/Counter05.fsproj --mode=development",
+    "start05": "webpack-dev-server --env.entry=./src/Counter05/Counter05.fsproj --mode=development"
   },
   "dependencies": {
     "@babel/core": "^7.5.5",
