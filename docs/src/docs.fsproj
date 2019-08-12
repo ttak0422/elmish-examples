@@ -1,23 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <!-- Global to the app -->
+    <ProjectReference Include="../../src/Counter05/Counter05.fsproj">
+      <Name>Counter05.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../../src/Counter07/Counter07.fsproj">
+      <Name>Counter07.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../../src/Counter08/Counter08.fsproj">
+      <Name>Counter08.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../../src/Counter09/Counter09.fsproj">
+      <Name>Counter09.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../../src/Counter10/Counter10.fsproj">
+      <Name>Counter10.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../../src/Counter11/Counter11.fsproj">
+      <Name>Counter11.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../../src/Counter12/Counter12.fsproj">
+      <Name>Counter12.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../../src/HelloWorld01/HelloWorld01.fsproj">
+      <Name>HelloWorld01.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../../src/HelloWorld03/HelloWorld03.fsproj">
+      <Name>HelloWorld03.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../../src/HelloWorld04/HelloWorld04.fsproj">
+      <Name>HelloWorld04.fsproj</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Global.fs" />
-    <!-- Info -->
     <Compile Include="Info/View.fs" />
-    <!-- Counter -->
     <Compile Include="Counter/Types.fs" />
     <Compile Include="Counter/State.fs" />
     <Compile Include="Counter/View.fs" />
-    <!-- Home -->
     <Compile Include="Home/Types.fs" />
     <Compile Include="Home/State.fs" />
     <Compile Include="Home/View.fs" />
-    <!-- Navbar -->
     <Compile Include="Navbar/View.fs" />
-    <!-- App -->
     <Compile Include="Types.fs" />
     <Compile Include="State.fs" />
     <Compile Include="App.fs" />

@@ -1,20 +1,18 @@
 module App.View
 
 open Elmish
-open Elmish.Browser.Navigation
-open Elmish.Browser.UrlParser
+open Elmish.UrlParser
 open Fable.Core
 open Fable.Core.JsInterop
 open Fable.Import
-open Fable.Import.Browser
-open Types
+open App.Types
 open App.State
 open Global
 
 importAll "../sass/main.sass"
 
-open Fable.Helpers.React
-open Fable.Helpers.React.Props
+open Fable.React
+open Fable.React.Props
 
 let menuItem label page currentPage =
     li
@@ -32,9 +30,20 @@ let menu currentPage =
         [ str "General" ]
       ul
         [ ClassName "menu-list" ]
-        [ menuItem "Home" Home currentPage
-          menuItem "Counter sample" Counter currentPage
-          menuItem "About" Page.About currentPage ] ]
+        [ menuItem "Home" Page.Home currentPage
+          menuItem "Counter sample" Page.Counter currentPage
+          menuItem "About" Page.About currentPage
+          menuItem "HelloWorld01" Page.HelloWorld01 currentPage
+          menuItem "HelloWorld03" Page.HelloWorld03 currentPage
+          menuItem "HelloWorld04" Page.HelloWorld04 currentPage
+          menuItem "Counter05" Page.Counter05 currentPage
+          menuItem "Counter07" Page.Counter07 currentPage
+          menuItem "Counter08" Page.Counter08 currentPage
+          menuItem "Counter09" Page.Counter09 currentPage
+          menuItem "Counter10" Page.Counter10 currentPage
+          menuItem "Counter11" Page.Counter11 currentPage
+          menuItem "Counter12" Page.Counter12 currentPage
+          ] ]
 
 let root model dispatch =
 
@@ -43,6 +52,16 @@ let root model dispatch =
     | Page.About -> Info.View.root
     | Counter -> Counter.View.root model.Counter (CounterMsg >> dispatch)
     | Home -> Home.View.root model.Home (HomeMsg >> dispatch)
+    | HelloWorld01 -> HelloWorld01.View.root model.HelloWorld01 (HelloWorld01Msg >> dispatch)
+    | HelloWorld03 -> HelloWorld03.View.root model.HelloWorld03 (HelloWorld03Msg >> dispatch)
+    | HelloWorld04 -> HelloWorld04.View.root model.HelloWorld04 (HelloWorld04Msg >> dispatch)
+    | Counter05 -> Counter05.View.root model.Counter05 (Counter05Msg >> dispatch)
+    | Counter07 -> Counter07.View.root model.Counter07 (Counter07Msg >> dispatch)
+    | Counter08 -> Counter08.View.root model.Counter08 (Counter08Msg >> dispatch)
+    | Counter09 -> Counter09.View.root model.Counter09 (Counter09Msg >> dispatch)
+    | Counter10 -> Counter10.View.root model.Counter10 (Counter10Msg >> dispatch)
+    | Counter11 -> Counter11.View.root model.Counter11 (Counter11Msg >> dispatch)
+    | Counter12 -> Counter12.View.root model.Counter12 (Counter12Msg >> dispatch)
 
   div
     []
@@ -70,5 +89,5 @@ Program.mkProgram init update root
 #if DEBUG
 |> Program.withDebugger
 #endif
-|> Program.withReact "elmish-app"
+|> Program.withReactBatched "elmish-app"
 |> Program.run

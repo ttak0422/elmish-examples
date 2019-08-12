@@ -28,13 +28,13 @@ var CONFIG = {
     // More info at https://babeljs.io/docs/en/next/babel-preset-env.html
     babel: {
         presets: [
-            ["@babel/preset-env", {
-                "targets": "> 0.25%, not dead",
-                "modules": false,
-                // This adds polyfills when needed. Requires core-js dependency.
-                // See https://babeljs.io/docs/en/babel-preset-env#usebuiltins
-                "useBuiltIns": "usage",
-            }]
+//            ["@babel/preset-env", {
+//                "targets": "> 0.25%, not dead",
+//                "modules": false,
+//                // This adds polyfills when needed. Requires core-js dependency.
+//                // See https://babeljs.io/docs/en/babel-preset-env#usebuiltins
+//                "useBuiltIns": "usage",
+//            }]
         ],
     }
 }
