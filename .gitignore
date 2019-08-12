@@ -1,3 +1,6 @@
+public/*
+!public/*.html
+
 # F#
 .fake/
 packages/
