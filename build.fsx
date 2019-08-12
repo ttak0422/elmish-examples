@@ -1,26 +1,31 @@
+#r "paket: groupref Build //"
 #load ".fake/build.fsx/intellisense.fsx"
+
 open Fake.Core
+open Fake.Core.TargetOperators
 open Fake.DotNet
 open Fake.IO
-open Fake.IO.FileSystemOperators
 open Fake.IO.Globbing.Operators
-open Fake.Core.TargetOperators
+open Fake.JavaScript
 
-Target.create "Clean" (fun _ ->
+Target.create "Clean" <| fun _ ->
     !! "src/**/bin"
     ++ "src/**/obj"
-    |> Shell.cleanDirs 
-)
+    |> Shell.cleanDirs
 
-Target.create "Build" (fun _ ->
-    !! "src/**/*.*proj"
-    |> Seq.iter (DotNet.build id)
-)
+Target.create "YarnInstall" <| fun _ ->
+    Yarn.install id
 
-Target.create "All" ignore
+Target.create "DotnetRestore" <| fun _ ->
+    DotNet.restore
+        (DotNet.Options.withWorkingDirectory __SOURCE_DIRECTORY__)
+        "elmish-examples.sln"
+
+Target.create "PreProcessing" ignore
 
 "Clean"
-  ==> "Build"
-  ==> "All"
+    ==> "YarnInstall"
+    ==> "DotnetRestore"
+    ==> "PreProcessing"
 
-Target.runOrDefault "All"
+Target.runOrDefault "PreProcessing"
