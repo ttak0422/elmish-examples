@@ -29,6 +29,9 @@ Target.create "01" <| fun _ ->
 Target.create "01b" <| fun _ ->
     Yarn.exec "start01b" id
 
+Target.create "03" <| fun _ ->
+    Yarn.exec "start03" id
+
 "Clean"
     ==> "YarnInstall"
     ==> "DotnetRestore"
@@ -39,5 +42,8 @@ Target.create "01b" <| fun _ ->
 
 "PreProcessing"
     ==> "01b"
+
+"PreProcessing"
+    ==> "03"
 
 Target.runOrDefault "PreProcessing"
