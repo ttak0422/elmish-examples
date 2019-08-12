@@ -17,7 +17,9 @@
     "build05": "webpack --env.entry=./src/Counter05/Counter05.fsproj --mode=development",
     "start05": "webpack-dev-server --env.entry=./src/Counter05/Counter05.fsproj --mode=development",
     "build07": "webpack --env.entry=./src/Counter07/Counter07.fsproj --mode=development",
-    "start07": "webpack-dev-server --env.entry=./src/Counter07/Counter07.fsproj --mode=development"
+    "start07": "webpack-dev-server --env.entry=./src/Counter07/Counter07.fsproj --mode=development",
+    "build08": "webpack --env.entry=./src/Counter08/Counter08.fsproj --mode=development",
+    "start08": "webpack-dev-server --env.entry=./src/Counter08/Counter08.fsproj --mode=development"
   },
   "dependencies": {
     "@babel/core": "^7.5.5",
