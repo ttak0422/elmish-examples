@@ -29,8 +29,6 @@ let urlUpdate (result : Page option) model =
         { model with CurrentPage = page }, []
 
 let init result =
-    let (counter, counterCmd) = Counter.State.init()
-    let (home, homeCmd) = Home.State.init()
     let h01 = HelloWorld01.State.init()
     let h03 = HelloWorld03.State.init()
     let h04 = HelloWorld04.State.init()
