@@ -3,8 +3,6 @@ module App.Types
 open Global
 
 type Msg =
-    | CounterMsg of Counter.Types.Msg
-    | HomeMsg of Home.Types.Msg
     | HelloWorld01Msg of HelloWorld01.Types.Msg // dummy
     | HelloWorld03Msg of HelloWorld03.Types.Msg // dummy
     | HelloWorld04Msg of HelloWorld04.Types.Msg // dummy
@@ -19,8 +17,6 @@ type Msg =
 
 type Model =
     { CurrentPage: Page
-      Counter: Counter.Types.Model
-      Home: Home.Types.Model
       HelloWorld01: HelloWorld01.Types.Model
       HelloWorld03: HelloWorld03.Types.Model
       HelloWorld04: HelloWorld04.Types.Model

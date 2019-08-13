@@ -9,8 +9,6 @@ open Types
 let pageParser: Parser<Page->Page,Page> =
     oneOf [
         map About (s "about")
-        map Counter (s "counter")
-        map Home (s "home")
         map HelloWorld01 (s "helloworld01")
         map HelloWorld03 (s "helloworld03")
         map HelloWorld04 (s "helloworld04")
@@ -45,9 +43,7 @@ let init result =
     let c12 = Counter12.State.init()
     let (model, cmd) =
         urlUpdate result
-          { CurrentPage = Home
-            Counter = counter
-            Home = home
+          { CurrentPage = About
             HelloWorld01 = h01
             HelloWorld03 = h03
             HelloWorld04 = h04
@@ -59,18 +55,10 @@ let init result =
             Counter11 = c11
             Counter12 = c12}
 
-    model, Cmd.batch [ cmd
-                       Cmd.map CounterMsg counterCmd
-                       Cmd.map HomeMsg homeCmd ]
+    model, Cmd.batch [ cmd ]
 
 let update msg model =
     match msg with
-    | CounterMsg msg ->
-        let (counter, counterCmd) = Counter.State.update msg model.Counter
-        { model with Counter = counter }, Cmd.map CounterMsg counterCmd
-    | HomeMsg msg ->
-        let (home, homeCmd) = Home.State.update msg model.Home
-        { model with Home = home }, Cmd.map HomeMsg homeCmd
     | HelloWorld01Msg _
     | HelloWorld03Msg _
     | HelloWorld04Msg _ -> failwith "This is dummy msg."
