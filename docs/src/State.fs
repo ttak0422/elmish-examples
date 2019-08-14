@@ -32,6 +32,7 @@ let urlUpdate (result : Page option) model =
 let init result =
     let h01 = HelloWorld01.State.init()
     let h01b = HelloWorld01b.State.init()
+    let h02 = HelloWorld02.State.init()
     let h03 = HelloWorld03.State.init()
     let h04 = HelloWorld04.State.init()
     let c05 = Counter05.State.init()
@@ -46,6 +47,7 @@ let init result =
           { CurrentPage = About
             HelloWorld01 = h01
             HelloWorld01b = h01b
+            HelloWorld02 = h02
             HelloWorld03 = h03
             HelloWorld04 = h04
             Counter05 = c05
@@ -62,6 +64,7 @@ let update msg model =
     match msg with
     | HelloWorld01Msg _
     | HelloWorld01bMsg _
+    | HelloWorld02Msg _
     | HelloWorld03Msg _
     | HelloWorld04Msg _ -> failwith "This is dummy msg."
     | Counter05Msg msg ->

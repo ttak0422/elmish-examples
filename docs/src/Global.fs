@@ -3,6 +3,7 @@ type Page =
     | About
     | HelloWorld01
     | HelloWorld01b
+    | HelloWorld02
     | HelloWorld03
     | HelloWorld04
     | Counter05
@@ -18,6 +19,7 @@ let toHash page =
     | About -> "about"
     | HelloWorld01 -> "helloworld01"
     | HelloWorld01b -> "helloworld01b"
+    | HelloWorld02 -> "helloworld02"
     | HelloWorld03 -> "helloworld03"
     | HelloWorld04 -> "helloworld04"
     | Counter05 -> "counter05"
