@@ -1,0 +1,70 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../src/Counter05/Counter05.fsproj">
+      <Name>Counter05.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/Counter07/Counter07.fsproj">
+      <Name>Counter07.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/Counter08/Counter08.fsproj">
+      <Name>Counter08.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/Counter09/Counter09.fsproj">
+      <Name>Counter09.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/Counter10/Counter10.fsproj">
+      <Name>Counter10.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/Counter11/Counter11.fsproj">
+      <Name>Counter11.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/Counter12/Counter12.fsproj">
+      <Name>Counter12.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/HelloWorld01/HelloWorld01.fsproj">
+      <Name>HelloWorld01.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/HelloWorld03/HelloWorld03.fsproj">
+      <Name>HelloWorld03.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/HelloWorld04/HelloWorld04.fsproj">
+      <Name>HelloWorld04.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/HelloWorld01b/HelloWorld01b.fsproj">
+      <Name>HelloWorld01b.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/HelloWorld02/HelloWorld02.fsproj">
+      <Name>HelloWorld02.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/Counter06/Counter06.fsproj">
+      <Name>Counter06.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/InputBox13/InputBox13.fsproj">
+      <Name>InputBox13.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/Todos14/Todos14.fsproj">
+      <Name>Todos14.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/Todos15/Todos15.fsproj">
+      <Name>Todos15.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/Todos16/Todos16.fsproj">
+      <Name>Todos16.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/Todos17/Todos17.fsproj">
+      <Name>Todos17.fsproj</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src/Global.fs" />
+    <Compile Include="src/Info/View.fs" />
+    <Compile Include="src/Navbar/View.fs" />
+    <Compile Include="src/Types.fs" />
+    <Compile Include="src/State.fs" />
+    <Compile Include="src/App.fs" />
+  </ItemGroup>
+  <Import Project="..\.paket\Paket.Restore.targets" />
+</Project>
