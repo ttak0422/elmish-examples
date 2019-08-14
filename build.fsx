@@ -10,28 +10,37 @@ open Fake.JavaScript
 
 Target.create "Clean" <| fun _ ->
     !! "src/**/bin"
-    ++ "src/**/obj"
+    ++ "src/**/obj"    
+    ++ "docs/**/bin"
+    ++ "docs/**/obj"
+    ++ "docs/**/deploy"
     |> Shell.cleanDirs
 
 Target.create "YarnInstall" <| fun _ ->
     Yarn.install id
 
 Target.create "DotnetRestore" <| fun _ ->
-    DotNet.restore
-        (DotNet.Options.withWorkingDirectory __SOURCE_DIRECTORY__)
-        "elmish-examples.sln"
+    !! "src/**/*.fsproj"
+    |> Seq.iter (fun proj ->
+        DotNet.restore id proj)
 
-Target.create "PreProcessing" ignore
+Target.create "DotnetRestoreDocs" <| fun _ ->
+    !! "docs/**/*.fsproj"
+    |> Seq.iter (fun proj ->
+        DotNet.restore id proj)
+
+Target.create "Setup" ignore
+
+Target.create "SetupDocs" ignore
 
 let webpack path =
-    let cmd = sprintf "webpack --env.entry=%s --mode=development" path
+    let cmd = sprintf "webpack --env.entry=%s" path
     Yarn.exec cmd id
 
 let webpackDevServer path =
     let cmd = sprintf "webpack-dev-server --env.entry=%s --mode=development" path
     Yarn.exec cmd id
    
-
 Target.create "build01" <| fun _ -> webpack "./src/HelloWorld01/HelloWorld01.fsproj"
 Target.create "build03" <| fun _ -> webpack "./src/HelloWorld03/HelloWorld03.fsproj"
 Target.create "build04" <| fun _ -> webpack "./src/HelloWorld04/HelloWorld04.fsproj"
@@ -56,33 +65,53 @@ Target.create "watch11" <| fun _ -> webpackDevServer "./src/Counter11/Counter11.
 Target.create "watch12" <| fun _ -> webpackDevServer "./src/Counter12/Counter12.fsproj"
 Target.create "watch01b" <| fun _ -> webpackDevServer "./src/HelloWorld01b/HelloWorld01b.fsproj"
 
+let inline yarnWorkDir (ws : string) (yarnParams : Yarn.YarnParams) =
+    { yarnParams with WorkingDirectory = ws }
+
+Target.create "BuildDocs" <| fun _ ->
+    Yarn.exec "webpack --config docs/webpack.config.js" (yarnWorkDir "docs")
+
+Target.create "WatchDocs" <| fun _ ->
+    Yarn.exec "webpack-dev-server --config docs/webpack.config.js" (yarnWorkDir "docs")
+
 "Clean"
     ==> "YarnInstall"
     ==> "DotnetRestore"
-    ==> "PreProcessing"
+    ==> "Setup"
 
-"PreProcessing" ==> "build01"
-"PreProcessing" ==> "build01b"
-"PreProcessing" ==> "build03"
-"PreProcessing" ==> "build04"
-"PreProcessing" ==> "build05"
-"PreProcessing" ==> "build07"
-"PreProcessing" ==> "build08"
-"PreProcessing" ==> "build09"
-"PreProcessing" ==> "build10"
-"PreProcessing" ==> "build11"
-"PreProcessing" ==> "build12"
+"Clean"
+    ==> "YarnInstall"
+    ==> "DotnetRestoreDocs"
+    ==> "SetupDocs"
 
-"PreProcessing" ==> "watch01"
-"PreProcessing" ==> "watch01b"
-"PreProcessing" ==> "watch03"
-"PreProcessing" ==> "watch04"
-"PreProcessing" ==> "watch05"
-"PreProcessing" ==> "watch07"
-"PreProcessing" ==> "watch08"
-"PreProcessing" ==> "watch09"
-"PreProcessing" ==> "watch10"
-"PreProcessing" ==> "watch11"
-"PreProcessing" ==> "watch12"
+"Setup" ==> "build01"
+"Setup" ==> "build01b"
+"Setup" ==> "build03"
+"Setup" ==> "build04"
+"Setup" ==> "build05"
+"Setup" ==> "build07"
+"Setup" ==> "build08"
+"Setup" ==> "build09"
+"Setup" ==> "build10"
+"Setup" ==> "build11"
+"Setup" ==> "build12"
+
+"Setup" ==> "watch01"
+"Setup" ==> "watch01b"
+"Setup" ==> "watch03"
+"Setup" ==> "watch04"
+"Setup" ==> "watch05"
+"Setup" ==> "watch07"
+"Setup" ==> "watch08"
+"Setup" ==> "watch09"
+"Setup" ==> "watch10"
+"Setup" ==> "watch11"
+"Setup" ==> "watch12"
+
+"BuildDocs"
+    <== [ "SetupDocs" ]
+
+"WatchDocs"
+    <== [ "SetupDocs" ]    
 
 Target.runOrDefault "PreProcessing"
