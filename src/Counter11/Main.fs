@@ -8,6 +8,9 @@ open Fable.React.Props
 module Types =
     type Model = int list
 
+    // We've added the (Decrement Int) value to the Msg union type.
+    // (Decrement Int) will work in a similar way that (Increment Int) works
+    // except it will decrement the counter at the specified index instead of incrementing it.
     type Msg =
         | Increment of int
         | Decrement of int
@@ -28,6 +31,8 @@ module State =
                     cnt + 1
                 else
                     cnt)
+        // We added an expression that handles the (Decrement Int) message value,
+        // which decrements the counter at the index that we care about.
         | Decrement index ->
             model
             |> List.indexed
@@ -50,6 +55,8 @@ module View =
                     [ ClassName "btn btn-primary ml-2"
                       OnClick (fun _ -> dispatch <| Increment index) ]
                     [ str "+" ]
+                  // We added a button that will trigger pass a (Decrement Int) message
+                  // to the update function when it's clicked.
                   button
                     [ ClassName "btn btn-primary ml-2"
                       OnClick (fun _ -> dispatch <| Decrement index) ]
