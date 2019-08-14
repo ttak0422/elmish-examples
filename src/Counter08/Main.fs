@@ -8,6 +8,7 @@ open Fable.React.Props
 module Types =
     type Model = int
 
+    // We've added another new Msg value that we're going to call Reset.
     type Msg =
         | Increment
         | Decrement
@@ -16,6 +17,8 @@ module Types =
 module State =
     let init _ : Types.Model = 0
 
+    // We added a new entry in the case expression that checks for if the messae is Reset.
+    // If it is, then the new model value will be 0.
     let update msg (model : Types.Model) =
         match msg with
         | Types.Increment -> model + 1
@@ -33,6 +36,8 @@ module View =
                   button [ ClassName "btn btn-danger"
                            OnClick (fun _ -> dispatch Types.Decrement) ]
                     [ str "-" ]
+                  // We added a new button that will trigger an event 
+                  // that will pass the Reset value as a message to the update function.
                   button [ ClassName "btn btn-default"
                            OnClick (fun _ -> dispatch Types.Reset) ]
                     [ str "Reset" ] ] ]
