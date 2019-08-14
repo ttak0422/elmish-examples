@@ -8,6 +8,9 @@ open Fable.React.Props
 module Types =
     type Model = int list
 
+    // We've added a (Remove of int) value to our Msg union type.
+    // The (Remove of int) value will be represent removing a counter
+    // at the specified index.
     type Msg =
         | Increment of int
         | Decrement of int
@@ -38,8 +41,27 @@ module State =
                 else
                     cnt)
         | Remove index ->
+            // We're using List.take to get the values in the list that are before the index in the list.
+            // The List.take function will take the first n elements from the list that it gets passed.
+            // For example:
+            // List.take 2 [ 1; 3; 5; 4 ] = [ 1; 3 ]
+            // List.take 1 [ 3; 2; 1 ] = [ 3 ]
+            // List.take  0 [ 5; 6; 7 ] = []
+            // Since we want to get all the values in the list that are before index,
+            // we can write List.take index model
             let before = List.take index model
+            // We're using List.skip to get the value in the list that are after the index in the list.
+            // The List.skip function will skip the first n elements form the list that it gets passed.
+            // For example:
+            // List.skip 2 [ 1; 3; 5; 4 ] = [ 5; 4 ]
+            // List.drop 1 [ 3; 2; 1 ] = [ 2; 1 ]
+            // List.drop 0 [ 5; 6; 7 ] = [ 5; 6; 7 ]
+            // Since we want to get all the values after the index,
+            // we can skip the first (index + 1) by writing List.skip (index + 1) model.
             let after = List.skip (index+1) model
+            // Since we have the list of values before the removed index and 
+            // the list of values after the removed index,
+            // we can concatenate them together and that will be the new value that we use as our model
             before @ after
         | AddCount ->
             model @ [ 0 ]
