@@ -6,6 +6,8 @@ open Fake.Core.TargetOperators
 open Fake.DotNet
 open Fake.IO
 open Fake.IO.Globbing.Operators
+open Fake.IO.FileSystemOperators
+open Fake.Tools.Git
 open Fake.JavaScript
 
 Target.create "Clean" <| fun _ ->
@@ -74,6 +76,20 @@ Target.create "BuildDocs" <| fun _ ->
 Target.create "WatchDocs" <| fun _ ->
     Yarn.exec "webpack-dev-server --config docs/webpack.config.js" (yarnWorkDir "docs")
 
+let root = __SOURCE_DIRECTORY__
+let repositoryLink = "https://github.com/ttak0422/elmish-examples.git"
+let ghPagesBranch = "gh-pages"
+let ghPagesClone = root </> "temp"
+let docsOutput = root </> "docs" </> "deploy"
+
+Target.create "PublishDocs" <| fun _ ->
+    Shell.cleanDir ghPagesClone
+    Repository.cloneSingleBranch "" repositoryLink ghPagesBranch ghPagesClone
+    Shell.copyRecursive docsOutput ghPagesClone true |> Trace.tracefn "%A"
+    Staging.stageAll ghPagesClone
+    Commit.exec ghPagesClone "Update gh-pages"
+    Branches.push ghPagesClone
+
 "Clean"
     ==> "YarnInstall"
     ==> "DotnetRestore"
@@ -112,6 +128,9 @@ Target.create "WatchDocs" <| fun _ ->
     <== [ "SetupDocs" ]
 
 "WatchDocs"
-    <== [ "SetupDocs" ]    
+    <== [ "SetupDocs" ]  
+
+"PublishDocs"
+    <== [ "BuildDocs" ]
 
 Target.runOrDefault "PreProcessing"
