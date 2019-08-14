@@ -37,11 +37,11 @@ let update msg model : Model =
         { model with Todos = newTodos }
 
 
-// We added some nice little touces to the web app.
-// We added a placeholder attribute that's similar to placeholder 
-// attribute you're used to with native HTML.
+// We made it so you can now hit enter to add a todo instead of having to click on the button.
+// To accomplish this, we wrapped the input and button in a form and made the AddTodo message
+// get passed whenever an OnKeyDown event gets triggered.
+// The OnKeyDonw event will get triggered whenever the user hits emter in the box on the button.
 let root model dispatch : ReactElement =
-    // We made the styling nicer by taking advantage of Bootstrap classes.
     let viewTodo (index, todo) : ReactElement =
         div [ ClassName "card" ]
             [ div [ ClassName "card-block" ] 
