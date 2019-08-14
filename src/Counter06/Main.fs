@@ -14,7 +14,7 @@ module State =
     let init _ : Types.Model = 0
     // The type declaration for the update function means that the update function 
     // takes a Msg and a Model and then returns a Model Type.
-    let update (msg : Msg) (model : Types.Model) : Types.Model =
+    let update (msg : Types.Msg) (model : Types.Model) : Types.Model =
         match msg with
         | Types.Increment -> model + 1
 

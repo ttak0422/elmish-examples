@@ -9,6 +9,7 @@ type Msg =
     | HelloWorld03Msg of HelloWorld03.Types.Msg // dummy
     | HelloWorld04Msg of HelloWorld04.Types.Msg // dummy
     | Counter05Msg of Counter05.Types.Msg
+    | Counter06Msg of Counter06.Types.Msg
     | Counter07Msg of Counter07.Types.Msg
     | Counter08Msg of Counter08.Types.Msg
     | Counter09Msg of Counter09.Types.Msg
@@ -25,6 +26,7 @@ type Model =
       HelloWorld03: HelloWorld03.Types.Model
       HelloWorld04: HelloWorld04.Types.Model
       Counter05: Counter05.Types.Model
+      Counter06: Counter06.Types.Model
       Counter07: Counter07.Types.Model
       Counter08: Counter08.Types.Model
       Counter09: Counter09.Types.Model

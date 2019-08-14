@@ -39,6 +39,9 @@
     <ProjectReference Include="../src/HelloWorld02/HelloWorld02.fsproj">
       <Name>HelloWorld02.fsproj</Name>
     </ProjectReference>
+    <ProjectReference Include="../src/Counter06/Counter06.fsproj">
+      <Name>Counter06.fsproj</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src/Global.fs" />

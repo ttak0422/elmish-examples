@@ -15,6 +15,7 @@ let pageParser: Parser<Page->Page,Page> =
         map HelloWorld03 (s "helloworld03")
         map HelloWorld04 (s "helloworld04")
         map Counter05 (s "counter05")
+        map Counter06 (s "counter06")
         map Counter07 (s "counter07")
         map Counter08 (s "counter08")
         map Counter09 (s "counter09")
@@ -37,6 +38,7 @@ let init result =
     let h03 = HelloWorld03.State.init()
     let h04 = HelloWorld04.State.init()
     let c05 = Counter05.State.init()
+    let c06 = Counter06.State.init()
     let c07 = Counter07.State.init()
     let c08 = Counter08.State.init()
     let c09 = Counter09.State.init()
@@ -52,6 +54,7 @@ let init result =
             HelloWorld03 = h03
             HelloWorld04 = h04
             Counter05 = c05
+            Counter06 = c06
             Counter07 = c07
             Counter08 = c08
             Counter09 = c09
@@ -71,6 +74,9 @@ let update msg model =
     | Counter05Msg msg ->
         let counterModel = Counter05.State.update msg model.Counter05
         { model with Counter05 = counterModel }, []
+    | Counter06Msg msg ->
+        let counterModel = Counter06.State.update msg model.Counter06
+        { model with Counter06 = counterModel }, []
     | Counter07Msg msg ->
         let counterModel = Counter07.State.update msg model.Counter07
         { model with Counter07 = counterModel }, []

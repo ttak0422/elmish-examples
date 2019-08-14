@@ -37,6 +37,7 @@ let menu currentPage =
           menuItem "HelloWorld03" Page.HelloWorld03 currentPage
           menuItem "HelloWorld04" Page.HelloWorld04 currentPage
           menuItem "Counter05" Page.Counter05 currentPage
+          menuItem "Counter06" Page.Counter06 currentPage
           menuItem "Counter07" Page.Counter07 currentPage
           menuItem "Counter08" Page.Counter08 currentPage
           menuItem "Counter09" Page.Counter09 currentPage
@@ -55,6 +56,7 @@ let root model dispatch =
     | HelloWorld03 -> HelloWorld03.View.root model.HelloWorld03 (HelloWorld03Msg >> dispatch)
     | HelloWorld04 -> HelloWorld04.View.root model.HelloWorld04 (HelloWorld04Msg >> dispatch)
     | Counter05 -> Counter05.View.root model.Counter05 (Counter05Msg >> dispatch)
+    | Counter06 -> Counter06.View.root model.Counter06 (Counter06Msg >> dispatch)
     | Counter07 -> Counter07.View.root model.Counter07 (Counter07Msg >> dispatch)
     | Counter08 -> Counter08.View.root model.Counter08 (Counter08Msg >> dispatch)
     | Counter09 -> Counter09.View.root model.Counter09 (Counter09Msg >> dispatch)
