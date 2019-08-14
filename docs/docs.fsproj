@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../src/Counter05/Counter05.fsproj">
+      <Name>Counter05.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/Counter07/Counter07.fsproj">
+      <Name>Counter07.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/Counter08/Counter08.fsproj">
+      <Name>Counter08.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/Counter09/Counter09.fsproj">
+      <Name>Counter09.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/Counter10/Counter10.fsproj">
+      <Name>Counter10.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/Counter11/Counter11.fsproj">
+      <Name>Counter11.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/Counter12/Counter12.fsproj">
+      <Name>Counter12.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/HelloWorld01/HelloWorld01.fsproj">
+      <Name>HelloWorld01.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/HelloWorld03/HelloWorld03.fsproj">
+      <Name>HelloWorld03.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/HelloWorld04/HelloWorld04.fsproj">
+      <Name>HelloWorld04.fsproj</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src/Global.fs" />
+    <Compile Include="src/Info/View.fs" />
+    <Compile Include="src/Navbar/View.fs" />
+    <Compile Include="src/Types.fs" />
+    <Compile Include="src/State.fs" />
+    <Compile Include="src/App.fs" />
+  </ItemGroup>
+  <Import Project="..\.paket\Paket.Restore.targets" />
+</Project>

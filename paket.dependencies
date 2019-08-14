@@ -7,8 +7,10 @@ group Elmish
     storage:none
     source https://api.nuget.org/v3/index.json
     nuget Fable.Elmish
-    nuget Fable.Elmish.React
     nuget Fable.Elmish.Browser
+    nuget Fable.Elmish.Debugger
+    nuget Fable.Elmish.HMR
+    nuget Fable.Elmish.React
 
 group Build
     storage: none

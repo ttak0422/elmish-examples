@@ -1,4 +1,4 @@
-﻿module HelloWorld01
+﻿module Counter08
 
 open Elmish
 open Elmish.React
@@ -33,7 +33,8 @@ module View =
                   button [ ClassName "btn btn-danger"
                            OnClick (fun _ -> dispatch Types.Decrement) ]
                     [ str "-" ]
-                  button [ ClassName "btn btn-default" ]
+                  button [ ClassName "btn btn-default"
+                           OnClick (fun _ -> dispatch Types.Reset) ]
                     [ str "Reset" ] ] ]
 
 Program.mkSimple State.init State.update View.root
