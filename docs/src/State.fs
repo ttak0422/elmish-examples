@@ -11,6 +11,7 @@ let pageParser: Parser<Page->Page,Page> =
         map About (s "about")
         map HelloWorld01 (s "helloworld01")
         map HelloWorld01b (s "helloworld01b")
+        map HelloWorld02 (s "helloworld02")
         map HelloWorld03 (s "helloworld03")
         map HelloWorld04 (s "helloworld04")
         map Counter05 (s "counter05")
