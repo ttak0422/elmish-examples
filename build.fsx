@@ -56,6 +56,7 @@ Target.create "build12" <| fun _ -> webpack "./src/counter12/counter12.fsproj"
 Target.create "build13" <| fun _ -> webpack "./src/InputBox13/InputBox13.fsproj"
 Target.create "build14" <| fun _ -> webpack "./src/Todos14/Todos14.fsproj"
 Target.create "build15" <| fun _ -> webpack "./src/Todos15/Todos15.fsproj"
+Target.create "build16" <| fun _ -> webpack "./src/Todos16/Todos16.fsproj"
 Target.create "build01b" <| fun _ -> webpack "./src/HelloWorld01b/HelloWorld01b.fsproj"
 
 Target.create "watch01" <| fun _ -> webpackDevServer "./src/HelloWorld01/HelloWorld01.fsproj"
@@ -71,6 +72,7 @@ Target.create "watch12" <| fun _ -> webpackDevServer "./src/Counter12/Counter12.
 Target.create "watch13" <| fun _ -> webpackDevServer "./src/InputBox13/InputBox13.fsproj"
 Target.create "watch14" <| fun _ -> webpackDevServer "./src/Todos14/Todos14.fsproj"
 Target.create "watch15" <| fun _ -> webpackDevServer "./src/Todos15/Todos15.fsproj"
+Target.create "watch16" <| fun _ -> webpackDevServer "./src/Todos16/Todos16.fsproj"
 Target.create "watch01b" <| fun _ -> webpackDevServer "./src/HelloWorld01b/HelloWorld01b.fsproj"
 
 let inline yarnWorkDir (ws : string) (yarnParams : Yarn.YarnParams) =
@@ -120,6 +122,7 @@ Target.create "PublishDocs" <| fun _ ->
 "Setup" ==> "build13"
 "Setup" ==> "build14"
 "Setup" ==> "build15"
+"Setup" ==> "build16"
 
 "Setup" ==> "watch01"
 "Setup" ==> "watch01b"
@@ -135,6 +138,7 @@ Target.create "PublishDocs" <| fun _ ->
 "Setup" ==> "watch13"
 "Setup" ==> "watch14"
 "Setup" ==> "watch15"
+"Setup" ==> "watch16"
 
 "BuildDocs"
     <== [ "SetupDocs" ]
