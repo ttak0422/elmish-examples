@@ -50,19 +50,19 @@ let root model dispatch =
   let pageHtml page =
     match page with
     | Page.About -> Info.View.root
-    | HelloWorld01 -> HelloWorld01.View.root model.HelloWorld01 (HelloWorld01Msg >> dispatch)
+    | HelloWorld01 -> HelloWorld01.root model.HelloWorld01 (HelloWorld01Msg >> dispatch)
     | HelloWorld01b -> HelloWorld01b.View.root model.HelloWorld01b (HelloWorld01bMsg >> dispatch)
-    | HelloWorld02 -> HelloWorld02.View.root model.HelloWorld02 (HelloWorld02Msg >> dispatch)
-    | HelloWorld03 -> HelloWorld03.View.root model.HelloWorld03 (HelloWorld03Msg >> dispatch)
-    | HelloWorld04 -> HelloWorld04.View.root model.HelloWorld04 (HelloWorld04Msg >> dispatch)
-    | Counter05 -> Counter05.View.root model.Counter05 (Counter05Msg >> dispatch)
-    | Counter06 -> Counter06.View.root model.Counter06 (Counter06Msg >> dispatch)
-    | Counter07 -> Counter07.View.root model.Counter07 (Counter07Msg >> dispatch)
-    | Counter08 -> Counter08.View.root model.Counter08 (Counter08Msg >> dispatch)
-    | Counter09 -> Counter09.View.root model.Counter09 (Counter09Msg >> dispatch)
-    | Counter10 -> Counter10.View.root model.Counter10 (Counter10Msg >> dispatch)
-    | Counter11 -> Counter11.View.root model.Counter11 (Counter11Msg >> dispatch)
-    | Counter12 -> Counter12.View.root model.Counter12 (Counter12Msg >> dispatch)
+    | HelloWorld02 -> HelloWorld02.root model.HelloWorld02 (HelloWorld02Msg >> dispatch)
+    | HelloWorld03 -> HelloWorld03.root model.HelloWorld03 (HelloWorld03Msg >> dispatch)
+    | HelloWorld04 -> HelloWorld04.root model.HelloWorld04 (HelloWorld04Msg >> dispatch)
+    | Counter05 -> Counter05.root model.Counter05 (Counter05Msg >> dispatch)
+    | Counter06 -> Counter06.root model.Counter06 (Counter06Msg >> dispatch)
+    | Counter07 -> Counter07.root model.Counter07 (Counter07Msg >> dispatch)
+    | Counter08 -> Counter08.root model.Counter08 (Counter08Msg >> dispatch)
+    | Counter09 -> Counter09.root model.Counter09 (Counter09Msg >> dispatch)
+    | Counter10 -> Counter10.root model.Counter10 (Counter10Msg >> dispatch)
+    | Counter11 -> Counter11.root model.Counter11 (Counter11Msg >> dispatch)
+    | Counter12 -> Counter12.root model.Counter12 (Counter12Msg >> dispatch)
 
   div
     []

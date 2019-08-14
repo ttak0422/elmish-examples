@@ -32,19 +32,19 @@ let urlUpdate (result : Page option) model =
         { model with CurrentPage = page }, []
 
 let init result =
-    let h01 = HelloWorld01.State.init()
+    let h01 = HelloWorld01.init()
     let h01b = HelloWorld01b.State.init()
-    let h02 = HelloWorld02.State.init()
-    let h03 = HelloWorld03.State.init()
-    let h04 = HelloWorld04.State.init()
-    let c05 = Counter05.State.init()
-    let c06 = Counter06.State.init()
-    let c07 = Counter07.State.init()
-    let c08 = Counter08.State.init()
-    let c09 = Counter09.State.init()
-    let c10 = Counter10.State.init()
-    let c11 = Counter11.State.init()
-    let c12 = Counter12.State.init()
+    let h02 = HelloWorld02.init()
+    let h03 = HelloWorld03.init()
+    let h04 = HelloWorld04.init()
+    let c05 = Counter05.init()
+    let c06 = Counter06.init()
+    let c07 = Counter07.init()
+    let c08 = Counter08.init()
+    let c09 = Counter09.init()
+    let c10 = Counter10.init()
+    let c11 = Counter11.init()
+    let c12 = Counter12.init()
     let (model, cmd) =
         urlUpdate result
           { CurrentPage = About
@@ -72,26 +72,26 @@ let update msg model =
     | HelloWorld03Msg _
     | HelloWorld04Msg _ -> failwith "This is dummy msg."
     | Counter05Msg msg ->
-        let counterModel = Counter05.State.update msg model.Counter05
+        let counterModel = Counter05.update msg model.Counter05
         { model with Counter05 = counterModel }, []
     | Counter06Msg msg ->
-        let counterModel = Counter06.State.update msg model.Counter06
+        let counterModel = Counter06.update msg model.Counter06
         { model with Counter06 = counterModel }, []
     | Counter07Msg msg ->
-        let counterModel = Counter07.State.update msg model.Counter07
+        let counterModel = Counter07.update msg model.Counter07
         { model with Counter07 = counterModel }, []
     | Counter08Msg msg ->
-        let counterModel = Counter08.State.update msg model.Counter08
+        let counterModel = Counter08.update msg model.Counter08
         { model with Counter08 = counterModel }, []
     | Counter09Msg msg ->
-        let counterModel = Counter09.State.update msg model.Counter09
+        let counterModel = Counter09.update msg model.Counter09
         { model with Counter09 = counterModel }, []
     | Counter10Msg msg ->
-        let counterModel = Counter10.State.update msg model.Counter10
+        let counterModel = Counter10.update msg model.Counter10
         { model with Counter10 = counterModel }, []
     | Counter11Msg msg ->
-        let counterModel = Counter11.State.update msg model.Counter11
+        let counterModel = Counter11.update msg model.Counter11
         { model with Counter11 = counterModel }, []
     | Counter12Msg msg ->
-        let counterModel = Counter12.State.update msg model.Counter12
+        let counterModel = Counter12.update msg model.Counter12
         { model with Counter12 = counterModel }, []
