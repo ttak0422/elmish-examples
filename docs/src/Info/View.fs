@@ -8,7 +8,7 @@ let root =
     [ ClassName "content" ]
     [ h1
         [ ]
-        [ str "About page" ]
+        [ str "About" ]
       p
         [ ]
-        [ str "This template is a simple application build with Fable + Elmish + React." ] ]
+        [ str "Samples of each section are posted. " ] ]

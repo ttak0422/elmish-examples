@@ -10,6 +10,7 @@ let pageParser: Parser<Page->Page,Page> =
     oneOf [
         map About (s "about")
         map HelloWorld01 (s "helloworld01")
+        map HelloWorld01b (s "helloworld01b")
         map HelloWorld03 (s "helloworld03")
         map HelloWorld04 (s "helloworld04")
         map Counter05 (s "counter05")
@@ -30,6 +31,7 @@ let urlUpdate (result : Page option) model =
 
 let init result =
     let h01 = HelloWorld01.State.init()
+    let h01b = HelloWorld01b.State.init()
     let h03 = HelloWorld03.State.init()
     let h04 = HelloWorld04.State.init()
     let c05 = Counter05.State.init()
@@ -43,6 +45,7 @@ let init result =
         urlUpdate result
           { CurrentPage = About
             HelloWorld01 = h01
+            HelloWorld01b = h01b
             HelloWorld03 = h03
             HelloWorld04 = h04
             Counter05 = c05
@@ -58,6 +61,7 @@ let init result =
 let update msg model =
     match msg with
     | HelloWorld01Msg _
+    | HelloWorld01bMsg _
     | HelloWorld03Msg _
     | HelloWorld04Msg _ -> failwith "This is dummy msg."
     | Counter05Msg msg ->

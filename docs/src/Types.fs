@@ -4,6 +4,7 @@ open Global
 
 type Msg =
     | HelloWorld01Msg of HelloWorld01.Types.Msg // dummy
+    | HelloWorld01bMsg of HelloWorld01b.Types.Msg // dummy
     | HelloWorld03Msg of HelloWorld03.Types.Msg // dummy
     | HelloWorld04Msg of HelloWorld04.Types.Msg // dummy
     | Counter05Msg of Counter05.Types.Msg
@@ -18,6 +19,7 @@ type Msg =
 type Model =
     { CurrentPage: Page
       HelloWorld01: HelloWorld01.Types.Model
+      HelloWorld01b: HelloWorld01b.Types.Model
       HelloWorld03: HelloWorld03.Types.Model
       HelloWorld04: HelloWorld04.Types.Model
       Counter05: Counter05.Types.Model

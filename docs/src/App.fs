@@ -32,6 +32,7 @@ let menu currentPage =
         [ ClassName "menu-list" ]
         [ menuItem "About" Page.About currentPage
           menuItem "HelloWorld01" Page.HelloWorld01 currentPage
+          menuItem "HelloWorld01b" Page.HelloWorld01b currentPage
           menuItem "HelloWorld03" Page.HelloWorld03 currentPage
           menuItem "HelloWorld04" Page.HelloWorld04 currentPage
           menuItem "Counter05" Page.Counter05 currentPage
@@ -40,8 +41,7 @@ let menu currentPage =
           menuItem "Counter09" Page.Counter09 currentPage
           menuItem "Counter10" Page.Counter10 currentPage
           menuItem "Counter11" Page.Counter11 currentPage
-          menuItem "Counter12" Page.Counter12 currentPage
-          ] ]
+          menuItem "Counter12" Page.Counter12 currentPage ] ]
 
 let root model dispatch =
 
@@ -49,6 +49,7 @@ let root model dispatch =
     match page with
     | Page.About -> Info.View.root
     | HelloWorld01 -> HelloWorld01.View.root model.HelloWorld01 (HelloWorld01Msg >> dispatch)
+    | HelloWorld01b -> HelloWorld01b.View.root model.HelloWorld01b (HelloWorld01bMsg >> dispatch)
     | HelloWorld03 -> HelloWorld03.View.root model.HelloWorld03 (HelloWorld03Msg >> dispatch)
     | HelloWorld04 -> HelloWorld04.View.root model.HelloWorld04 (HelloWorld04Msg >> dispatch)
     | Counter05 -> Counter05.View.root model.Counter05 (Counter05Msg >> dispatch)

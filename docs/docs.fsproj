@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -33,6 +32,9 @@
     </ProjectReference>
     <ProjectReference Include="../src/HelloWorld04/HelloWorld04.fsproj">
       <Name>HelloWorld04.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/HelloWorld01b/HelloWorld01b.fsproj">
+      <Name>HelloWorld01b.fsproj</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

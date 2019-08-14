@@ -2,6 +2,7 @@ module Global
 type Page =
     | About
     | HelloWorld01
+    | HelloWorld01b
     | HelloWorld03
     | HelloWorld04
     | Counter05
@@ -16,6 +17,7 @@ let toHash page =
     match page with
     | About -> "about"
     | HelloWorld01 -> "helloworld01"
+    | HelloWorld01b -> "helloworld01b"
     | HelloWorld03 -> "helloworld03"
     | HelloWorld04 -> "helloworld04"
     | Counter05 -> "counter05"
