@@ -1,40 +1,52 @@
-﻿// 一行のコメント
+﻿// This is how you write single-line comments in F#.
 
 (*
-    複数行の
-    コメント
-    (* コメントのネスト *)
+    This is how you
+    write multi-line comments
+    in F#.
+    (*
+        This is how you write nested commts in F#.
+    *)
 *)
 
-// exportするモジュールの宣言
+// This is how you declare what your module name is
+// The default is public.
 module HelloWorld01
 
-// importするモジュールの宣言
+// We're importing the Elmish and Elmish.React, Fable.React modules
+// the text value available in our file,
+// so we can just reference it if we want.
 open Elmish
 open Elmish.React
 open Fable.React
 
 (*
-    Elmとは違いElmishではTEAのmodel, update, viewに従う必要がある
-    ここではダミーのmodel, update, モデルに依存しないviewを宣言している
+    Unlike Elm, Elmish needs to follow TEA(model, update, view).
+    So I declare dummy model and update in this sample.
 *)
 
+// dummy
 module Types =
     type Model = Dummy
 
     type Msg = Dummy
 
+// dummy
 module State =
     let init _ = Types.Dummy
 
     let update msg model = model
 
+
 module View =
-    // 型宣言を書く必要はないものの書いておく方がいい場面もある
-    // 型宣言を書くにはこう
-    let root (model: Types.Model) dispatch : ReactElement =
+    open Types
+    let root (model: Model) dispatch =
         str "Hello, World"
 
-Program.mkSimple State.init State.update View.root
+open State
+open View
+
+// `Program.mkSimple` likes `sandbox` in Elm
+Program.mkSimple init update root
 |> Program.withReactBatched "elmish-app"
 |> Program.run
