@@ -16,20 +16,29 @@ type Msg =
     | Counter10Msg of Counter10.Msg
     | Counter11Msg of Counter11.Msg
     | Counter12Msg of Counter12.Msg
-
+    | InputBox13Msg of InputBox13.Msg
+    | Todos14Msg of Todos14.Msg
+    | Todos15Msg of Todos15.Msg
+    | Todos16Msg of Todos16.Msg
+    | Todos17Msg of Todos17.Msg
 
 type Model =
-    { CurrentPage: Page
-      HelloWorld01: HelloWorld01.Model
-      HelloWorld01b: HelloWorld01b.Types.Model
-      HelloWorld02: HelloWorld02.Model
-      HelloWorld03: HelloWorld03.Model
-      HelloWorld04: HelloWorld04.Model
-      Counter05: Counter05.Model
-      Counter06: Counter06.Model
-      Counter07: Counter07.Model
-      Counter08: Counter08.Model
-      Counter09: Counter09.Model
-      Counter10: Counter10.Model
-      Counter11: Counter11.Model
-      Counter12: Counter12.Model }
+    { CurrentPage : Page
+      HelloWorld01 : HelloWorld01.Model
+      HelloWorld01b : HelloWorld01b.Types.Model
+      HelloWorld02 : HelloWorld02.Model
+      HelloWorld03 : HelloWorld03.Model
+      HelloWorld04 : HelloWorld04.Model
+      Counter05 : Counter05.Model
+      Counter06 : Counter06.Model
+      Counter07 : Counter07.Model
+      Counter08 : Counter08.Model
+      Counter09 : Counter09.Model
+      Counter10 : Counter10.Model
+      Counter11 : Counter11.Model
+      Counter12 : Counter12.Model
+      InputBox13 : InputBox13.Model
+      Todos14 : Todos14.Model
+      Todos15 : Todos15.Model
+      Todos16 : Todos16.Model
+      Todos17 : Todos17.Model }

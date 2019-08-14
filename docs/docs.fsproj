@@ -42,6 +42,21 @@
     <ProjectReference Include="../src/Counter06/Counter06.fsproj">
       <Name>Counter06.fsproj</Name>
     </ProjectReference>
+    <ProjectReference Include="../src/InputBox13/InputBox13.fsproj">
+      <Name>InputBox13.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/Todos14/Todos14.fsproj">
+      <Name>Todos14.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/Todos15/Todos15.fsproj">
+      <Name>Todos15.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/Todos16/Todos16.fsproj">
+      <Name>Todos16.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/Todos17/Todos17.fsproj">
+      <Name>Todos17.fsproj</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src/Global.fs" />

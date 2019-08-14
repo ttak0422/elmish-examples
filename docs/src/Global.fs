@@ -14,6 +14,11 @@ type Page =
     | Counter10
     | Counter11
     | Counter12
+    | InputBox13
+    | Todos14
+    | Todos15
+    | Todos16
+    | Todos17
 
 let toHash page =
     match page with
@@ -31,4 +36,9 @@ let toHash page =
     | Counter10 -> "counter10"
     | Counter11 -> "counter11"
     | Counter12 -> "counter12"
+    | InputBox13 -> "inputbox13"
+    | Todos14 -> "todos14"
+    | Todos15 -> "todos15"
+    | Todos16 -> "todos16"
+    | Todos17 -> "todos17"
     |> fun url -> "#" + url
