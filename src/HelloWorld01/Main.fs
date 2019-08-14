@@ -25,26 +25,20 @@ open Fable.React
     So I declare dummy model and update in this sample.
 *)
 
-// dummy
-module Types =
-    type Model = Dummy
 
-    type Msg = Dummy
+type Model = DummyModel
 
-// dummy
-module State =
-    let init _ = Types.Dummy
-
-    let update msg model = model
+type Msg = DummyMsg
 
 
-module View =
-    open Types
-    let root (model: Model) dispatch =
-        str "Hello, World"
+let init() = DummyModel
 
-open State
-open View
+let update msg model = model
+
+
+let root (model: Model) dispatch =
+    str "Hello, World"
+
 
 // `Program.mkSimple` likes `sandbox` in Elm
 Program.mkSimple init update root

@@ -4,28 +4,22 @@ open Elmish
 open Elmish.React
 open Fable.React
 
-// dummy
-module Types =
-    type Model = Dummy
 
-    type Msg = Dummy
+type Model = DummyModel
 
-// dummy
-module State =
-    let init _ = Types.Dummy
-
-    let update msg model = model
+type Msg = DummyMsg
 
 
-module View =
-    open Types    
-    // In F#, we can explicitly say what any value's type is.
-    // Since the root value is just an HTML node, it has the type (ReactElement).
-    let root (model: Model) dispatch : ReactElement =
-        str "Hello, World"
+let init _ = DummyModel
 
-open State
-open View
+let update msg model = model
+
+
+// In F#, we can explicitly say what any value's type is.
+// Since the root value is just an HTML node, it has the type (ReactElement).
+let root (model: Model) dispatch : ReactElement =
+    str "Hello, World"
+
 
 Program.mkSimple init update root
 |> Program.withReactBatched "elmish-app"

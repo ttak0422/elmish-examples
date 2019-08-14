@@ -7,25 +7,26 @@ open Elmish.React
 open Fable.React
 open Fable.React.Props
 
-module Types =
-    type Model = Dummy
 
-    type Msg = Dummy
+type Model = DummyModel
 
-module State =
-    let init _ = Types.Dummy
+type Msg = DummyMsg
 
-    let update msg model = model
 
-module View =
-    let root model dispatch : ReactElement =
-        (*
-            Now the View.root value has a div element which has a class of "text-center".
-            Since we're using Bootstrap, this will make it so child text node is centered.
-            So now the "Hello, World" message is centered.
-        *)
-        div [ ClassName "text-center" ] [ str "Hello, World" ]
+let init _ = DummyModel
 
-Program.mkSimple State.init State.update View.root
+let update msg model = model
+
+
+let root model dispatch : ReactElement =
+    (*
+        Now the View.root value has a div element which has a class of "text-center".
+        Since we're using Bootstrap, this will make it so child text node is centered.
+        So now the "Hello, World" message is centered.
+    *)
+    div [ ClassName "text-center" ] [ str "Hello, World" ]
+
+
+Program.mkSimple init update root
 |> Program.withReactBatched "elmish-app"
 |> Program.run
