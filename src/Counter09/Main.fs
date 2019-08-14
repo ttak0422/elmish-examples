@@ -12,7 +12,7 @@ module Types =
     // Before, we had the Msg type as Increment, which was enough information for us
     // to know that we can increment our counter. Now that we have multiple counters, 
     // we need to pass information about which counter we want to Increment.
-    // So now we have (Increment Int) as out Msg type, 
+    // So now we have (Increment of int) as out Msg type, 
     // where the Int value will indicate the index of the counter we want to increment.
     // So if we want to increment the counter at index 0, 
     // we can have the OnClick event trigger the message (Increment 0).
