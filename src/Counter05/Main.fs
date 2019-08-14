@@ -39,7 +39,7 @@ module View =
     // The view function takes the model and dispatcher, then return a ReactElement, which gets displayed on the screen.
     // Every time the modek gets updated, the new value for the model will get passed into the view function, 
     // which will output the HTML display.    
-    let root (model : Model) dispatch : ReactElement =
+    let root model dispatch =
         div [ ClassName "text-center" ]
             [ div [] [ str <| string model ]
               button [ ClassName "btn btn-primary"
