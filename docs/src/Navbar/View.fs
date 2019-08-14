@@ -35,7 +35,7 @@ let root =
                 [ ClassName "navbar-brand" ]
                 [ h1
                     [ ClassName "navbar-item title is-4" ]
-                    [ str "Elmish" ] ]
+                    [ str "elmish-examples" ] ]
               div
                 [ ClassName "navbar-end" ]
                 [ navButtons ] ] ]
