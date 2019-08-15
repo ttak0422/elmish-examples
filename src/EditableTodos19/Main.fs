@@ -1,4 +1,4 @@
-﻿module Todos17
+﻿module EditableTodos19
 
 // Let's use mkProgram from now on instead of mkSimple.
 // This will allow us to do side effects with commands and subscriptions.
