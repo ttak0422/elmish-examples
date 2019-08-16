@@ -61,6 +61,7 @@ Target.create "build17" <| fun _ -> webpack "./src/Todos17/Todos17.fsproj"
 Target.create "build18" <| fun _ -> webpack "./src/EditableTodos18/EditableTodos18.fsproj"
 Target.create "build19" <| fun _ -> webpack "./src/EditableTodos19/EditableTodos19.fsproj"
 Target.create "build20" <| fun _ -> webpack "./src/EditableTodos20/EditableTodos20.fsproj"
+Target.create "build21" <| fun _ -> webpack "./src/LocalStorageEditableTodos21/LocalStorageEditable21.fsproj"
 Target.create "build01b" <| fun _ -> webpack "./src/HelloWorld01b/HelloWorld01b.fsproj"
 
 Target.create "watch01" <| fun _ -> webpackDevServer "./src/HelloWorld01/HelloWorld01.fsproj"
@@ -81,6 +82,7 @@ Target.create "watch17" <| fun _ -> webpackDevServer "./src/Todos17/Todos17.fspr
 Target.create "watch18" <| fun _ -> webpackDevServer "./src/EditableTodos18/EditableTodos18.fsproj"
 Target.create "watch19" <| fun _ -> webpackDevServer "./src/EditableTodos19/EditableTodos19.fsproj"
 Target.create "watch20" <| fun _ -> webpackDevServer "./src/EditableTodosw20/EditableTodos20.fsproj"
+Target.create "watch21" <| fun _ -> webpackDevServer "./src/LocalStorageEditableTodos21/LocalStorageEditable21.fsproj"
 Target.create "watch01b" <| fun _ -> webpackDevServer "./src/HelloWorld01b/HelloWorld01b.fsproj"
 
 let inline yarnWorkDir (ws : string) (yarnParams : Yarn.YarnParams) =
@@ -135,6 +137,7 @@ Target.create "PublishDocs" <| fun _ ->
 "Setup" ==> "build18"
 "Setup" ==> "build19"
 "Setup" ==> "build20"
+"Setup" ==> "build21"
 
 "Setup" ==> "watch01"
 "Setup" ==> "watch01b"
@@ -154,7 +157,7 @@ Target.create "PublishDocs" <| fun _ ->
 "Setup" ==> "watch17"
 "Setup" ==> "watch18"
 "Setup" ==> "watch19"
-"Setup" ==> "watch20"
+"Setup" ==> "watch21"
 
 "BuildDocs"
     <== [ "SetupDocs" ]
