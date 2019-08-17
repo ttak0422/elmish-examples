@@ -1,4 +1,4 @@
-﻿module EditableTodos22
+﻿module LocalStorageEditableTodos22
 
 open Elmish
 open Elmish.React

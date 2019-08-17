@@ -1,6 +1,6 @@
 ﻿// We can control localStorage from Fable. In this sample, 
 // we realize this web application by writing only F#.
-module EditableTodos21
+module LocalStorageEditableTodos21
 
 open Elmish
 open Elmish.React
