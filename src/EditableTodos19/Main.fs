@@ -4,7 +4,7 @@
 // This will allow us to do side effects with commands and subscriptions.
 // I'll explain more about commands and subscriptions later,
 // but for now just think of them as the 2 only ways to do side effects in Elmish.
-// Having side effects be really controlled like this is really nive for large projects
+// Having side effects be really controled like this is really nive for large projects
 // because side effects can basically happen in 2 locations,
 // so it makes programs easier to understand.
 open Elmish
