@@ -64,6 +64,7 @@ Target.create "build20" <| fun _ -> webpack "./src/EditableTodos20/EditableTodos
 Target.create "build21" <| fun _ -> webpack "./src/LocalStorageEditableTodos21/LocalStorageEditable21.fsproj"
 Target.create "build22" <| fun _ -> webpack "./src/LocalStorageEditableTodos22/LocalStorageEditable22.fsproj"
 Target.create "build23" <| fun _ -> webpack "./src/FilterTodos23/FilterTodos23.fsproj"
+Target.create "build24" <| fun _ -> webpack "./src/FilterTodos24/FilterTodos24.fsproj"
 Target.create "build01b" <| fun _ -> webpack "./src/HelloWorld01b/HelloWorld01b.fsproj"
 
 Target.create "watch01" <| fun _ -> webpackDevServer "./src/HelloWorld01/HelloWorld01.fsproj"
@@ -87,6 +88,7 @@ Target.create "watch20" <| fun _ -> webpackDevServer "./src/EditableTodosw20/Edi
 Target.create "watch21" <| fun _ -> webpackDevServer "./src/LocalStorageEditableTodos21/LocalStorageEditable21.fsproj"
 Target.create "watch22" <| fun _ -> webpackDevServer "./src/LocalStorageEditableTodos22/LocalStorageEditable22.fsproj"
 Target.create "watch23" <| fun _ -> webpackDevServer "./src/FilterTodos23/FilterTodos23.fsproj"
+Target.create "watch24" <| fun _ -> webpackDevServer "./src/FilterTodos24/FilterTodos24.fsproj"
 Target.create "watch01b" <| fun _ -> webpackDevServer "./src/HelloWorld01b/HelloWorld01b.fsproj"
 
 let inline yarnWorkDir (ws : string) (yarnParams : Yarn.YarnParams) =
