@@ -8,6 +8,7 @@ open Fable.Import
 open App.Types
 open App.State
 open Global
+open Helper
 
 importAll "../sass/main.sass"
 
@@ -41,7 +42,25 @@ let menu currentPage =
                 menuItem "Todos14" Todos14 currentPage
                 menuItem "Todos15" Todos15 currentPage
                 menuItem "Todos16" Todos16 currentPage
-                menuItem "Todos17" Todos17 currentPage ] ]
+                menuItem "Todos17" Todos17 currentPage
+                menuItem "EditableTodos18" EditableTodos18 currentPage
+                menuItem "EditableTodos19" EditableTodos19 currentPage
+                menuItem "EditableTodos20" EditableTodos20 currentPage
+
+                menuItem "LocalStorageEditableTodos21"
+                    LocalStorageEditableTodos21 currentPage
+
+                menuItem "LocalStorageEditableTodos22"
+                    LocalStorageEditableTodos22 currentPage
+                menuItem "FilterTodos23" FilterTodos23 currentPage
+                menuItem "FilterTodos24" FilterTodos24 currentPage
+
+                menuItem "NavigationTodos25"
+                    (NavigationTodos25 NavigationTodos25.Filter.All) currentPage
+
+                menuItem "NavigationTodos25b"
+                    (NavigationTodos25b NavigationTodos25b.Route.Top)
+                    currentPage ] ]
 
 let root model dispatch =
     let pageHtml page =
@@ -72,6 +91,33 @@ let root model dispatch =
         | Todos15 -> Todos15.root model.Todos15 (Todos15Msg >> dispatch)
         | Todos16 -> Todos16.root model.Todos16 (Todos16Msg >> dispatch)
         | Todos17 -> Todos17.root model.Todos17 (Todos17Msg >> dispatch)
+        | EditableTodos18 ->
+            EditableTodos18.root model.EditableTodos18
+                (EditableTodos18Msg >> dispatch)
+        | EditableTodos19 ->
+            EditableTodos19.root model.EditableTodos19
+                (EditableTodos19Msg >> dispatch)
+        | EditableTodos20 ->
+            EditableTodos20.root model.EditableTodos20
+                (EditableTodos20Msg >> dispatch)
+        | LocalStorageEditableTodos21 ->
+            LocalStorageEditableTodos21.root model.LocalStorageEditableTodos21
+                (LocalStorageEditableTodos21Msg >> dispatch)
+        | LocalStorageEditableTodos22 ->
+            LocalStorageEditableTodos22.root model.LocalStorageEditableTodos22
+                (LocalStorageEditableTodos22Msg >> dispatch)
+        | FilterTodos23 ->
+            FilterTodos23.root model.FilterTodos23
+                (FilterTodos23Msg >> dispatch)
+        | FilterTodos24 ->
+            FilterTodos24.root model.FilterTodos24
+                (FilterTodos24Msg >> dispatch)
+        | NavigationTodos25 _ ->
+            Nav25.root model.NavigationTodos25
+                (NavigationTodos25Msg >> dispatch)
+        | NavigationTodos25b _ ->
+            Nav25b.root model.NavigationTodos25b
+                (NavigationTodos25bMsg >> dispatch)
     div []
         [ Navbar.View.root
 

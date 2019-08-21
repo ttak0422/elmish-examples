@@ -21,6 +21,15 @@ type Msg =
     | Todos15Msg of Todos15.Msg
     | Todos16Msg of Todos16.Msg
     | Todos17Msg of Todos17.Msg
+    | EditableTodos18Msg of EditableTodos18.Msg
+    | EditableTodos19Msg of EditableTodos19.Msg
+    | EditableTodos20Msg of EditableTodos20.Msg
+    | LocalStorageEditableTodos21Msg of LocalStorageEditableTodos21.Msg
+    | LocalStorageEditableTodos22Msg of LocalStorageEditableTodos22.Msg
+    | FilterTodos23Msg of FilterTodos23.Msg
+    | FilterTodos24Msg of FilterTodos24.Msg
+    | NavigationTodos25Msg of NavigationTodos25.Msg
+    | NavigationTodos25bMsg of NavigationTodos25b.Msg
 
 type Model =
     { CurrentPage : Page
@@ -41,4 +50,13 @@ type Model =
       Todos14 : Todos14.Model
       Todos15 : Todos15.Model
       Todos16 : Todos16.Model
-      Todos17 : Todos17.Model }
+      Todos17 : Todos17.Model
+      EditableTodos18 : EditableTodos18.Model
+      EditableTodos19 : EditableTodos19.Model
+      EditableTodos20 : EditableTodos20.Model
+      LocalStorageEditableTodos21 : LocalStorageEditableTodos21.Model
+      LocalStorageEditableTodos22 : LocalStorageEditableTodos22.Model
+      FilterTodos23 : FilterTodos23.Model
+      FilterTodos24 : FilterTodos24.Model
+      NavigationTodos25 : NavigationTodos25.Model
+      NavigationTodos25b : NavigationTodos25b.Model }
