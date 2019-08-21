@@ -1,5 +1,5 @@
 ﻿// More "Elmish"ish
-module NavigationTodos25b
+module Main
 
 open Elmish
 open Elmish.Navigation
