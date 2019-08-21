@@ -1,0 +1,8 @@
+Fable.Core
+
+group Elmish
+    Fable.Elmish
+    Fable.Elmish.React
+    Fable.Elmish.Browser
+    Fable.Promise
+    Thoth.Json

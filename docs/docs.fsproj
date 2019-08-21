@@ -57,9 +57,37 @@
     <ProjectReference Include="../src/Todos17/Todos17.fsproj">
       <Name>Todos17.fsproj</Name>
     </ProjectReference>
+    <ProjectReference Include="../src/EditableTodos18/EditableTodos18.fsproj">
+      <Name>EditableTodos18.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/EditableTodos19/EditableTodos19.fsproj">
+      <Name>EditableTodos19.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/EditableTodos20/EditableTodos20.fsproj">
+      <Name>EditableTodos20.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/LocalStorageEditableTodos21/LocalStorageEditable21.fsproj">
+      <Name>LocalStorageEditable21.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/LocalStorageEditableTodos22/LocalStorageEditable22.fsproj">
+      <Name>LocalStorageEditable22.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/FilterTodos23/FilterTodos23.fsproj">
+      <Name>FilterTodos23.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/FilterTodos24/FilterTodos24.fsproj">
+      <Name>FilterTodos24.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/NavigationTodos25/NavigationTodos25.fsproj">
+      <Name>NavigationTodos25.fsproj</Name>
+    </ProjectReference>
+    <ProjectReference Include="../src/NavigationTodos25b/NavigationTodos25b.fsproj">
+      <Name>NavigationTodos25b.fsproj</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src/Global.fs" />
+    <Compile Include="src/Helper.fs" />
     <Compile Include="src/Info/View.fs" />
     <Compile Include="src/Navbar/View.fs" />
     <Compile Include="src/Types.fs" />

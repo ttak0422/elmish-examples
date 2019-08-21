@@ -58,7 +58,7 @@ let root model dispatch : ReactElement =
                     [ OnInput (fun e -> !!e.target?value |> UpdateText |> dispatch) 
                       Value model.Text 
                       AutoFocus true 
-                      ClassName "form-controll" 
+                      ClassName "form-control" 
                       Placeholder "Enter a todo" ] ] 
               div [ ClassName "col-3" ] 
                 [ button 

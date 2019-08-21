@@ -11,7 +11,9 @@ group Elmish
     nuget Fable.Elmish.Debugger
     nuget Fable.Elmish.HMR
     nuget Fable.Elmish.React
-
+    nuget Fable.Promise
+    nuget Thoth.Json
+    
 group Build
     storage: none
     source https://api.nuget.org/v3/index.json
