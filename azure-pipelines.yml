@@ -13,7 +13,7 @@ steps:
   - task: UseDotNet@2
     inputs:
       packageType: sdk
-      version: latest
+      version: 2.x
       installationPath: $(Agent.ToolsDirectory)/dotnet
   - task: ShellScript@2
     inputs:
