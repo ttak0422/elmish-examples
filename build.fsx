@@ -190,4 +190,4 @@ Target.create "BuildAll" <| fun _ ->
 "BuildAll"
     <== [ "Setup" ]
 
-Target.runOrDefault "PreProcessing"
+Target.runOrDefault "Clean"
