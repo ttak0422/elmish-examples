@@ -18,4 +18,4 @@ steps:
   - task: ShellScript@2
     inputs:
       scriptPath: 'fake.sh'
-      args: 'build'
+      args: 'build -t BuildDocs'
