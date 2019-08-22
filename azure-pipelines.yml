@@ -1,0 +1,21 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '10.x'
+    displayName: 'Install Node.js'
+
+  - task: UseDotNet@2
+    inputs:
+      packageType: sdk
+      version: 2.x
+      installationPath: $(Agent.ToolsDirectory)/dotnet
+  - task: ShellScript@2
+    inputs:
+      scriptPath: 'fake.sh'
+      args: 'build -t BuildAll'
