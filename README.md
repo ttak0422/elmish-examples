@@ -1,6 +1,6 @@
 # elmish-examples
 
-[![Build Status](https://dev.azure.com/ttak0422/elmish-sample/_apis/build/status/ttak0422.elmish-examples?branchName=master)](https://dev.azure.com/ttak0422/elmish-sample/_build/latest?definitionId=2&branchName=master)
+[![Build Status](https://dev.azure.com/ttak0422/elmish-examples/_apis/build/status/ttak0422.elmish-examples?branchName=master)](https://dev.azure.com/ttak0422/elmish-examples/_build/latest?definitionId=4&branchName=master)
 
 ## About
 
