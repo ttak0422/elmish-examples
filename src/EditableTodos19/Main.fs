@@ -39,11 +39,11 @@ let init() : Model * Cmd<Msg> =
 // We're using mkProgram now instead of mkSimple, so our update function is slightly different.
 // The update function is mostly the same as before but now instead of just returning the model,
 // we now return a tuple containing the new model value and a command which can perform side effects.
-// We don't need to do any side effects, so we've just added Cmd.none as the command for 
+// We don't need to do any side effects, so we've just added Cmd.none as the command for
 // each returning value of the match expression. You'll see how they work later.
 // Just think of commands as a way of asking for some side effect to happen and think of
 // subscriptions as a way of listening or subscribing to the result of some side effect.
-// Commands get returned from the update function and the resulting values 
+// Commands get returned from the update function and the resulting values
 // produced from subscriptions get passed as a message to the update function.
 let update msg model : Model * Cmd<Msg> =
     match msg with
@@ -51,7 +51,7 @@ let update msg model : Model * Cmd<Msg> =
     | AddTodo ->
         { model with Text = ""
                      Todos = model.Todos @ [ model.Text ] }
-        , Cmd.none                 
+        , Cmd.none
     | RemoveTodo index ->
         let beforeTodos = List.take index model.Todos
         let afterTodos = List.skip (index + 1) model.Todos
@@ -71,7 +71,7 @@ let update msg model : Model * Cmd<Msg> =
         { model with Editing = None
                      Todos = newTodos }, Cmd.none
 
-// We don't need subscriptions, so we're just going to have the subscription function return 
+// We don't need subscriptions, so we're just going to have the subscription function return
 // Cmd.ofSub ignore, which indicates we have no subscriptions.
 // I'll explain subscriptions more in the future when we use them,
 // so don't worry about them right now.
@@ -83,7 +83,7 @@ let root model dispatch : ReactElement =
     let onEnter msg : DOMAttr =
         function
         | (ev : Browser.Types.KeyboardEvent) when ev.keyCode = 13. ->
-            dispatch msg            
+            dispatch msg
         | _ -> ()
         |> OnKeyDown
 
@@ -122,7 +122,7 @@ let root model dispatch : ReactElement =
                                                         !!e.target?value
                                                         |> UpdateText
                                                         |> dispatch)
-                                                    Value model.Text
+                                                    valueOrDefault model.Text
                                                     AutoFocus true
                                                     ClassName "form-control"
                                                     Placeholder "Enter a todo"
@@ -139,7 +139,7 @@ let root model dispatch : ReactElement =
 
 // We are now using mkProgram instead of mkSimple,
 // which takes a record with the properties: init, update, root and subscriptions.
-// The init property is similar to the init property in mkSimple except that it takes a 
+// The init property is similar to the init property in mkSimple except that it takes a
 // function that takes a function that takes in flags and return a tuple of type Model * Cmd<Msg>
 // The Cmd<Msg> is useful for if you want to perform any side effects in the beginning of the program.
 // You usually don't need to perform any side effects, so you just put the value Cmd.none
