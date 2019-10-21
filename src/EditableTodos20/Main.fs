@@ -25,7 +25,7 @@ type Msg =
 
 
 let init() : Model * Cmd<Msg> =
-    // F# doesn't have record type constructors now.    
+    // F# doesn't have record type constructors now.
     // https://github.com/fsharp/fslang-suggestions/issues/722
     { Text = ""
       Todos = [ "Laundry"; "Dishes" ]
@@ -37,7 +37,7 @@ let update msg model : Model * Cmd<Msg> =
     | AddTodo ->
         { model with Text = ""
                      Todos = model.Todos @ [ model.Text ] }
-        , Cmd.none                 
+        , Cmd.none
     | RemoveTodo index ->
         let beforeTodos = List.take index model.Todos
         let afterTodos = List.skip (index + 1) model.Todos
@@ -65,7 +65,7 @@ let root model dispatch : ReactElement =
     let onEnter msg : DOMAttr =
         function
         | (ev : Browser.Types.KeyboardEvent) when ev.keyCode = 13. ->
-            dispatch msg            
+            dispatch msg
         | _ -> ()
         |> OnKeyDown
 
@@ -104,7 +104,7 @@ let root model dispatch : ReactElement =
                                                         !!e.target?value
                                                         |> UpdateText
                                                         |> dispatch)
-                                                    Value model.Text
+                                                    valueOrDefault model.Text
                                                     AutoFocus true
                                                     ClassName "form-control"
                                                     Placeholder "Enter a todo"

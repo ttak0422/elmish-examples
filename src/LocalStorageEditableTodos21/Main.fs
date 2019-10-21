@@ -1,4 +1,4 @@
-﻿// We can control localStorage from Fable. In this sample, 
+﻿// We can control localStorage from Fable. In this sample,
 // we realize this web application by writing only F#.
 module LocalStorageEditableTodos21
 
@@ -53,7 +53,7 @@ let saveTodos (todos : string list) : Cmd<Msg> =
         |> Browser.WebStorage.localStorage.setItem
     Cmd.OfFunc.attempt save todos (string >> Failure)
 
-let init todos : Model * Cmd<Msg> =    
+let init todos : Model * Cmd<Msg> =
     { Text = ""
       Todos = todos
       Editing = None }, Cmd.none
@@ -81,11 +81,11 @@ let update msg model : Model * Cmd<Msg> =
             |> List.indexed
             |> List.map (fun (i, todo) ->
                    if i = index then todoText
-                   else todo)        
+                   else todo)
         { model with Editing = None
                      Todos = newTodos }, saveTodos newTodos
     | Failure err ->
-        JS.console.error err 
+        JS.console.error err
         model, Cmd.none
 
 let subscriptions dispatch : Cmd<Msg> =
@@ -96,7 +96,7 @@ let root model dispatch : ReactElement =
     let onEnter msg : DOMAttr =
         function
         | (ev : Browser.Types.KeyboardEvent) when ev.keyCode = 13. ->
-            dispatch msg            
+            dispatch msg
         | _ -> ()
         |> OnKeyDown
 
@@ -135,7 +135,7 @@ let root model dispatch : ReactElement =
                                                         !!e.target?value
                                                         |> UpdateText
                                                         |> dispatch)
-                                                    Value model.Text
+                                                    valueOrDefault model.Text
                                                     AutoFocus true
                                                     ClassName "form-control"
                                                     Placeholder "Enter a todo"
