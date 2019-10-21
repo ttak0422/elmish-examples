@@ -186,7 +186,7 @@ let root model dispatch : ReactElement =
                                                         !!e.target?value
                                                         |> UpdateText
                                                         |> dispatch)
-                                                    Value model.Text
+                                                    valueOrDefault model.Text
                                                     AutoFocus true
                                                     ClassName "form-control"
                                                     Placeholder "Enter a todo"

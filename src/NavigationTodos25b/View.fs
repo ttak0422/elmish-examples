@@ -1,6 +1,7 @@
 namespace NavigationTodos25b
 
 module View =
+    open Elmish.React
     open Fable.Core.JsInterop
     open Fable.React
     open Fable.React.Props
@@ -83,7 +84,7 @@ module View =
             [ div [ ClassName "row" ]
                   [ div [ ClassName "col-9" ]
                         [ input [ onInput UpdateText dispatch
-                                  Value model.Text
+                                  valueOrDefault model.Text
                                   AutoFocus true
                                   ClassName "form-control"
                                   Placeholder "Enter a todo"
@@ -101,4 +102,4 @@ module View =
                    |> filterTodos model.Filter
                    |> List.map
                           (fun todo ->
-                          viewTodo model.Editing todo dispatch)) ]  
+                          viewTodo model.Editing todo dispatch)) ]
